@@ -6,4 +6,4 @@ r = 0.051
 n = 3
 
 result = interest_year(p, r, n)
-print('원금: {0}, 이자: {1}'.format(p, result-p))
+print('원금: {0}, 이자: {1}'.format(p, result - p))
