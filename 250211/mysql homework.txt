@@ -7,13 +7,13 @@ age int(5) not null,
 grade char(5) not null
 );
 
-insert into students values(1, 'Alice', 20, 'A');
-insert into students values(2, 'Bob', 22, 'B');
-insert into students values(3, 'Charlie', 21, 'A');
-insert into students values(4, 'Dave', 23, 'C');
+insert into students (name, age, grade) values('Alice', 20, 'A');
+insert into students (name, age, grade) values('Bob', 22, 'B');
+insert into students (name, age, grade) values('Charlie', 21, 'A');
+insert into students (name, age, grade) values('Dave', 23, 'C');
 
 select name, age from students where grade = 'A';
 update students set age = 22 where name = 'Charlie';
-insert into students values(0, 'Eve', 24, 'B');
+insert into students (name, age, grade) values('Eve', 24, 'B');
 Delete from students where name = 'Dave';
 select * from students;
