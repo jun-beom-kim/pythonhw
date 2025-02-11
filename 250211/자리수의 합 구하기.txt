@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void main()
+{
+    int num = 0;
+    int result = 0;
+    int first_num = 0;
+    int second_num = 0;
+    int third_num = 0;
+    
+    scanf("%d", &num);
+    first_num = num / 100;
+    second_num = (num % 100) / 10;
+    third_num = num % 10;
+
+    result = first_num + second_num + third_num;
+    printf("%d", result);
+}
