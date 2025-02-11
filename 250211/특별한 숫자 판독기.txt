@@ -1,0 +1,24 @@
+void main()
+{
+    int num;
+    scanf("%d", &num);    
+    if (num < 0 || num > 999) {
+        printf("0부터 999 사이의 숫자를 입력하세요.\n");
+        return;  
+    }
+
+    int first_num = num / 100;
+    int second_num = (num / 10) % 10;
+    int third_num = num % 10;
+    int sum = first_num + second_num + third_num;
+
+    if ((num % 3 == 0) && (num % 2 != 0)){
+        printf("특별한 숫자입니다.");
+    } else if (sum % 7 == 0) {
+        printf("특별한 숫자입니다.");
+    } else if (first_num > third_num){
+        printf("특별한 숫자입니다.");
+    } else {
+        printf("특별한 숫자가 아닙니다.");
+    }
+}

@@ -1,0 +1,30 @@
+과제 3
+#include <stdio.h>
+
+void main()
+{
+    int num;
+    int bonus = 0;
+    scanf("%d", &num);
+    
+    if (num >= 90) {
+        printf("A 등급\n");
+        bonus = num * 0.1;
+        printf("%d", bonus);
+    }
+    else if (80 <= num && num <= 89) {
+        printf("B 등급\n");
+        bonus = num * 0.05;
+        printf("%d", bonus);
+    }
+    else if (70 <= num && num <= 79) {
+        printf("C 등급\n");
+    }
+    else if (60 <= num && num <= 69) {
+        printf("D 등급\n");
+    }
+    else {
+        printf("F 등급\n");
+    }
+    
+}
