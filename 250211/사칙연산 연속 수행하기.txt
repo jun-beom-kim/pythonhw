@@ -3,7 +3,7 @@
 void main()
 {
     int a, b, c;
-    int result;
+    double result;
 
     printf("첫 번째 정수를 입력하세요: ");
     if (scanf("%d", &a) != 1) {
@@ -27,11 +27,7 @@ void main()
         printf("0으로 나눌 수 없습니다.\n");
         return;
     }
-    result = (a + b) * c - (a - b) / c;
-    printf("연산 결과: (%d + %d) x %d - (%d - %d) / %d = %d\n", a, b, c, a, b, c, result);
-
+    result = (a + b) * c - (double)(a - b) / c;
+    
+    printf("연산 결과: (%d + %d) x %d - (%d - %d) / %d = %.2lf\n", a, b, c, a, b, c, result);
 }
-
-
-
-
