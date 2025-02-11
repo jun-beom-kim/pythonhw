@@ -2,16 +2,36 @@
 
 void main()
 {
-    int a, b, c = 0;
-    int result = 0;
-    
-    scanf("%d", &a);
-    scanf("%d", &b);
-    scanf("%d", &c);
+    int a, b, c;
+    int result;
 
-    result = (a + b) * c - (a - b)/c;
-    printf("%d", result);
+    printf("첫 번째 정수를 입력하세요: ");
+    if (scanf("%d", &a) != 1) {
+        printf("정수만 입력해야 합니다.\n");
+        return;  
+    }
+
+    printf("두 번째 정수를 입력하세요: ");
+    if (scanf("%d", &b) != 1) {
+        printf("정수만 입력해야 합니다.\n");
+        return; 
+    }
+
+    printf("세 번째 정수를 입력하세요: ");
+    if (scanf("%d", &c) != 1) {
+        printf("정수만 입력해야 합니다.\n");
+        return;
+    }
+
+    if (c == 0) {
+        printf("0으로 나눌 수 없습니다.\n");
+        return;
+    }
+    result = (a + b) * c - (a - b) / c;
+    printf("연산 결과: (%d + %d) x %d - (%d - %d) / %d = %d\n", a, b, c, a, b, c, result);
+
 }
+
 
 
 
