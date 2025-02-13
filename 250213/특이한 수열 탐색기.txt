@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int M, N;
+    scanf("%d", &M);
+    scanf("%d", &N);
+    if (M > N) {
+        printf("M 값이 N 보다 커야합니다.");
+    } else {
+        for (int i = M; i < N; i++){
+            if (i % 7 == 0 || (i / 10 == 7 || i % 10 == 7)) {
+                continue;
+            } else if (i % 5 == 0) {
+                printf("%d\n", i);
+                break;
+            } else {
+                printf("%d\n", i);
+            }
+        }        
+    }
+}
