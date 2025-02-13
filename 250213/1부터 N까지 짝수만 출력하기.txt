@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    int a = 0;
+    scanf("%d", &i);
+    
+    while(a <= i){
+        a = a + 2;  
+        if (a > i){
+            break;
+        }
+        printf("%d ", a);
+    }
+}
