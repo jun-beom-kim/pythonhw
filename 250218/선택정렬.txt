@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {64, 25, 12, 22, 11};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("초기: ");
+    for (int *ptr = arr; ptr < arr + size; ptr++) {
+        printf("%d ", *ptr);
+    }
+    printf("\n");
+
+    for (int i = 0; i < size - 1; i++) {
+        int *min_ptr = arr + i;
+        for (int *j = arr + i + 1; j < arr + size; j++) {
+            if (*j < *min_ptr) {
+                min_ptr = j;
+            }
+        }
+
+        if (min_ptr != arr + i) {
+            int temp = *min_ptr;
+            *min_ptr = *(arr + i);
+            *(arr + i) = temp;
+        }
+
+        printf("%d단계: ", i + 1);
+        for (int *ptr = arr; ptr < arr + size; ptr++) {
+            printf("%d ", *ptr);
+        }
+        printf("(최소값 %d → %d와 교환)\n", *(arr + i), *min_ptr);
+    }
+
+    printf("정렬 완료: ");
+    for (int *ptr = arr; ptr < arr + size; ptr++) {
+        printf("%d ", *ptr);
+    }
+    printf("\n");
+
+    return 0;
+}
