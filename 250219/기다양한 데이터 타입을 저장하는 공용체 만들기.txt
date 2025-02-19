@@ -1,0 +1,18 @@
+#include <stdio.h>
+#define DEFAULT_NUM 35
+void main() {
+    union member {
+        int intVal;
+        float floatVal;
+        char charVal;
+    };
+    
+    union member u;
+    u.floatVal = 7.7;
+    u.intVal = 100;
+    u.charVal = 'A';
+    
+    printf("%f %d\n", u.floatVal, &u.floatVal);    
+    printf("%d %d\n", u.intVal, &u.intVal);
+    printf("%c %d\n", u.charVal, &u.charVal);
+}

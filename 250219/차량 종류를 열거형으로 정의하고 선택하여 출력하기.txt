@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+void main() {
+    enum cars {SEDAN = 1, SUV = 2, TRUCK = 3, VAN = 4};
+    char *sedan[] = {"avante", "sonata", "grandeur"};
+    char *suv[] = {"AudiQ5", "BMWX5", "ToyotaRAV4"};
+    char *truck[] = {"Ram1500", "FordF-150", "ToyotaTundra"};
+    char *van[] = {"HondaOdyssey", "KiaCarnival", "DodgeGrandCaravan"};                                                             
+    
+    char car[50];
+    enum cars c;
+    
+    printf("차량 종류를 입력해주세요: ");
+    scanf("%s", car);
+    for (int i = 0; i < sizeof(sedan) / sizeof(sedan[0]); i++) {
+        if (strcmp(car, sedan[i]) == 0) {
+            c = SEDAN;
+            break;
+        }
+    }
+    for (int i = 0; i < sizeof(suv) / sizeof(suv[0]); i++) {
+        if (strcmp(car, suv[i]) == 0) {
+            c = SUV;
+            break;
+        }
+    }
+    for (int i = 0; i < sizeof(truck) / sizeof(truck[0]); i++) {
+        if (strcmp(car, truck[i]) == 0) {
+            c = TRUCK;
+            break;
+        }
+    }
+    for (int i = 0; i < sizeof(van) / sizeof(van[0]); i++) {
+        if (strcmp(car, van[i]) == 0) {
+            c = VAN;
+            break;
+        }
+    }
+    printf("현재 선택된 %d\n", c);
+    if (c == SEDAN) {
+        printf("이 차는 세단(Sedan)입니다.\n");
+    } else if (c == SUV) {
+        printf("이 차는 승용차(SUV)입니다.\n");
+    } else if (c == TRUCK) {
+        printf("이 차는 트럭(TRUCK)입니다.\n");
+    } else if (c == VAN) {
+        printf("이 차는 승합차(VAN)입니다.\n");
+    } else {
+        printf("등록되지 않은 차량입니다.");
+    }
+}
